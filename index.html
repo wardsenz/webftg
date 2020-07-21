@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Friendly Telegram Userbot • Mod</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="shortcut icon" href="https://friendly-telegram.gitlab.io/favicon.ico" type="image/x-icon">
+		<style>
+		.wrapper.style1 {
+            background-color: transparent !important; }
+		</style>
+	</head>
+	<body class="is-preload">
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Привет!</a></li>
+							<li><a href="#one">Установка</a></li>
+							<li><a href="#two">Частые ошибки и помощь</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+			<div id="wrapper">
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>FTGMod Ru</h1>
+							<p>🤖 Модифицированный и многофункциональный юзер-бот для Telegram. </p>
+							<p>Важно! Этот сайт не имеет никакого отношения к авторам исходного кода. Все права на исходники принадлежат их авторам.														<a href="https://friendly-telegram.gitlab.io" target="_blank">Source code • Исходный код</a>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Установка</a></li>
+							</ul>
+						</div>
+					</section>
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Установка на Heroku</h2>
+									<p><pre><code>(. <($(which curl>/dev/null&&echo curl -Ls||echo wget -qO-) https://kutt.it/ftgimod) --heroku --no-web)</code></pre> - потребуются <a href="https://my.telegram.org/apps" target="_blank">API Hash, API ID</a> и <a href="https://dashboard.heroku.com/" target="_blank">Heroku API Key</a></p>
+									<ul class="actions">
+										<li><a href="https://www.heroku.com/deploy/?template=https://github.com/wardsenz/friendly-telegram/" class="button" id="redp" target="_blank">Прямой деплой для продвинутых</a></li>
+                                            <script>
+                                            var link = document.getElementById('redp')
+                                            link.setAttribute("onclick","popupWin = window.open(this.href,'contacts','location,width=800,height=640,center=1'); popupWin.focus(); return false")
+                                            </script>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Автоматическая установка на Termux</h2>
+									<p><pre><code>(. <($(which curl>/dev/null&&echo curl -Ls||echo wget -qO-) https://kutt.it/ftgimod) --no-web)</code></pre> - потребуются <a href="https://my.telegram.org/apps" target="_blank">API Hash и API ID</a></p>
+									<ul class="actions">
+										<li><a href="https://termux.com" class="button" target="_blank">Скачать Termux</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Установка на Heroku с iOS (iSH Alpine)</h2>
+									<h3>На iOS не работает локальный сервер, так что ставим только на Heroku.</h3>
+									<p><ul>
+									<li>1. Первым делом обновим пакеты: 
+										<pre><code>apk update && apk upgrade</code></pre>
+									</li>
+									<li>2. Ставим bash и другие необходимые пакеты:
+										<pre><code>apk add bash bash-completion sudo nano wget git</code></pre>
+									</li>
+									<li>3. Используя nano редактируем файл <b>/etc/passwd</b>:
+										<pre><code>nano /etc/bash</code></pre> и в первой строчке заменяем стандартный шелл (ash, sh) на наш bash: <br><img src="https://raw.githubusercontent.com/wardsenz/friendly-telegram/master/src/nano_passwd1.jpg" width="100%"/><br>=><br><img src="https://raw.githubusercontent.com/wardsenz/friendly-telegram/master/src/nano_passwd2.jpg" width="100%"/><br>и сохраняем.
+									</li>
+									<li>4. Теперь редактируем <b>/etc/profile</b>:
+										<pre><code>nano /etc/profile</code></pre> и добавляем новую переменную <b>export SHELL=/bin/bash</b> в список экспортируемых переменных: <br><img src="https://raw.githubusercontent.com/wardsenz/friendly-telegram/master/src/nano_profile.jpg" width="100%" /><br>, закрываем консоль командой <b>exit</b> и открываем заново, чтобы изменения вступили в силу.
+									</li>
+									<li>5. Проверяем, получилось ли сменить шелл на <b>bash</b>
+										<pre><code>echo "$OSTYPE"</code></pre><img src="https://raw.githubusercontent.com/wardsenz/friendly-telegram/master/src/echo_ostype.jpg" width="100%" /><br> - получили <b>linux-musl</b>? Успех. Идём дальше. А если пустота - значит где-то и что-то сделали не так. Повторите шаги 3-4.
+									</li>
+									<li>6. Запуск установщика
+										<pre><code>git clone https://github.com/wardsenz/friendly-telegram
+cd friendly-telegram
+bash install.sh --heroku --no-web</code></pre> и ждём. Время установки зависит от скорости интернета, но в среднем занимает 4-7 минут.
+									</li>
+									<li>6.1 Деплой на Heroku
+										<img src="https://github.com/wardsenz/friendly-telegram/blob/master/src/successfully.jpg?raw=true" width="100%" /> <br> <img src="https://github.com/wardsenz/friendly-telegram/blob/master/src/successfully1.jpg?raw=true" width="100%" /> <br> - вводим API Hash, API ID и Heroku API ключ, ожидаемся сообщения <b>Installed to Heroku successfully</b> и закрываем консоль. На этом всё. Мы победили Купертино.
+									</li>
+</p>
+									<ul class="actions">
+										<li><a href="https://ish.app" class="button" target="_blank">Скачать iSH</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+					<section id="two" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Частые ошибки</h2>
+							<h3>No module named requests / The SSL module not available</h3>
+							<p>Попробуйте обновить <b>openssl</b> и установить зависимости вручную:
+							<pre><code>apt-get update
+apt-get install openssl -y
+pip3 install -r ~/friendly-telegram/requirements.txt</code></pre></p>
+							<h3>No module named friendly-telegram.main</h3>
+							<p>Вы пытаетесь запустить папку с ботом, а не самого бота (модуля). Правильный запуск:
+							<pre><code>cd ~/friendly-telegram
+python3 -m friendly-telegram <аргументы></code></pre>
+Список будет дополняться.</p>
+							<div class="split style1">
+								<p>
+								<section>
+									<ul class="contact">
+										<li>
+											<h2>Помощь</h2>
+											<span><a href="https://t.me/friendlytgbot_ru" target="_blank"><img src="https://img.icons8.com/color/144/000000/telegram-app.png" width="30" height="30"></a></span>
+											<span><a href="https://github.com/wardsenz/friendly-telegram" target="_blank"><img src="https://img.icons8.com/color/144/000000/github.png" width="32" height="32"></a></span>
+										</li>
+										<li>
+										<h3>Документация</h3>
+											<a href="http://ftg-ru.ga" target="_blank">ftgrudotga</a>
+										</li>
+										<li>
+											<h3>Автор мода</h3>
+											<a href="https://github.com/wardsenz" target="_blank">wardsenz</a>
+										</li>
+										<li>
+											<h3>♡ Благодарности</h3>
+											<span><a href="https://t.me/mpamop" target="_blank">mpamop</a></span>
+											<span><a href="https://t.me/mishailovic" target="_blank">hotaru</a></span>
+											<span><a href="https://t.me/aiexz" target="_blank">aiexz</a></span>
+											<span><a href="https://t.me/Dead_Lucifer_666" target="_blank">lucifer</a></span>
+											<span><a href="https://t.me/hlprnsb" target="_blank">hlprnsb</a></span>
+											<span><a href="https://t.me/demeonkop" target="_blank">aeoe</a></span>
+											<span><a href="https://t.me/unxho" target="_blank">utya</a></span>
+											
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li style="color: #fff">&copy; Authors | HTML5UP Hyperspace | GitHub Pages.</li>
+					</ul>
+				</div>
+			</footer>
+			<script src="jquery.min.js"></script>
+			<script src="jquery.scrollex.min.js"></script>
+			<script src="jquery.scrolly.min.js"></script>
+			<script src="browser.min.js"></script>
+			<script src="breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
