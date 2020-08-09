@@ -12,6 +12,14 @@
             background-color: transparent !important; }
 		</style>
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174247127-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174247127-1');
+</script>
 	</head>
 	<body class="is-preload">
 			<section id="sidebar">
@@ -31,7 +39,7 @@
 						<div class="inner">
 							<h1>FTGMod Ru <a class="github-button" href="https://github.com/wardsenz/friendly-telegram" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star wardsenz/friendly-telegram on GitHub">Star</a></h1>
 							<p>🤖 Модифицированный и многофункциональный юзер-бот для Telegram. </p>
-							<p>Важно! Этот сайт не имеет никакого отношения к авторам исходного кода. Все права на исходники принадлежат их авторам.														<a href="https://friendly-telegram.gitlab.io" target="_blank">Source code • Исходный код</a>
+							<p>Важно! Этот сайт не имеет никакого отношения к авторам исходного кода. Все права на оригинальные исходники принадлежат их авторам.														<a href="https://friendly-telegram.gitlab.io" target="_blank">Source code • Исходный код</a>
 							<ul class="actions">
 								<li><a href="#one" class="button scrolly">Установка</a></li>
 							</ul>
@@ -44,7 +52,8 @@
 									<h2>Изменения и дополнения</h2>
 									<p><b>Уже сделано:</b></p>
 									<ul>
-										<li>Почти полностью переведен на русский для русскоязычного сообщества</li>
+										<li>Полностью переведен на русский для русскоязычного сообщества</li>
+										<li>Переведён и перенесён официальный репозиторий с модулями из  гитлаба.</li>
 										<li>Добавлена полная поддержка iOS на iSH Alpine</il>
 										<li>Добавлена базовая защита от SCAM-модулей</li>
 										<li>По умолчанию устанавливается на стак Heroku-18 EU регион (Европа) для более низкой задержки</il>
@@ -55,8 +64,7 @@
 									</ul>
 									<p><b>Возможно, скоро будет</b></p>
 									<ul>
-										<li>Запуск команды от другого пользователя без @тега (уже тестится)</il>
-										<li>Перенести офиц. модули и перевести/обновить модули <a href="https://github.com/wardsenz/modules-repo" target="_blank"><b>(уже делаем)</b></a></il>
+										<li>Запуск команды от другого пользователя без @тега</il>
 										<li>Обновить список модулей в офиц. репо</il>
 									</ul>
 								</div>
@@ -85,6 +93,27 @@
 									<p><pre><code>(. <($(which curl>/dev/null&&echo curl -Ls||echo wget -qO-) https://kutt.it/ftgimod) --no-web)</code></pre> - потребуются <a href="https://my.telegram.org/apps" target="_blank">API Hash и API ID</a></p>
 									<ul class="actions">
 										<li><a href="https://termux.com" class="button" target="_blank">Скачать Termux</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Ручная установка</h2>
+									<p>В случае с VDS - запускайте всё от имени рут-пользователя.<pre><code>apt update
+apt install python3 python3-pip git
+apt install python3-dev libwebp-dev libz-dev libjpeg-dev libopenjp2-7 libtiff5w libffi-dev libcairo2 neofetch dialog screen
+git clone https://github.com/wardsenz/friendly-telegram
+cd friendly-telegram
+python3 -m pip install -r requirements.txt
+python3 -m friendly-telegram <...>
+</code></pre> - потребуются <a href="https://my.telegram.org/apps" target="_blank">API Hash и API ID</a></p>
+									<p>Как сохранить сессию при выходе из <b>ssh</b> (VDS): <pre><code>cd ~/friendly-telegram
+screen python3 -m friendly-telegram <...></code></pre>
+									После удачного запуска нажимаем комбинацию <b>CTRL + A</b>, и затем <b>D</b>.<br />Процесс продолжит работать после выхода из сессии ssh.</p>
+									<ul class="actions">
+										<li><a href="https://t.me/friendlytgbot_ru" class="button" target="_blank">Помощь</a></li>
 									</ul>
 								</div>
 							</div>
